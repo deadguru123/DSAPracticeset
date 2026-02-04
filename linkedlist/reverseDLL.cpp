@@ -20,3 +20,27 @@ class Solution {
         
     }
 };
+// without using stack 
+class Solution {
+  public:
+    Node *reverse(Node *head) {
+        Node* temp=head;
+        Node* back=NULL;
+        if(head == NULL || head->next == NULL)
+        return head;
+    
+       while(temp!=NULL)
+       {
+          
+       back=temp->prev;
+       temp->prev=temp->next;
+       temp->next=back;
+       temp=temp->prev;
+          
+       }
+     
+       
+       return back->prev;
+        
+    }
+};
