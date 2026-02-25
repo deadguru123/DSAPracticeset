@@ -14,3 +14,19 @@ class Solution {
       return prev;
     }
 };
+// recrusive method
+class Solution {
+  public:
+    Node* reverseList(Node* head) {
+        if(head==NULL||head->next==NULL)
+    {
+        return head;
+    }
+    Node * newnode=reverseList(head->next);
+    Node * front=head->next;
+    front->next=head;
+    head->next=NULL;
+    return newnode;
+
+    }  
+};
